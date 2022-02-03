@@ -1,0 +1,53 @@
+.product {
+    padding: 2rem;
+    margin: 0 0;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.contentbox {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 50%;
+}
+
+.itemNum {
+    padding: .6rem;
+    text-align: center;
+    display: block;
+    width: 10%;
+    background-color: #63334b;
+    border-radius: 42%;
+    font-weight: bold;
+}
+
+.itemTitle {
+    margin: .5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.itemDes {
+    margin: .5rem;
+    color: #eae9e9;
+}
+
+.btn {
+    margin: 1rem 0;
+    background: transparent;
+    border: 0;
+    width: 40%;
+}
+
+.btn a {
+    color: #ca003d;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.btn a:hover {
+    text-decoration: underline;
+}

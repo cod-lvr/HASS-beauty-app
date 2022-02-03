@@ -1,0 +1,8 @@
+.hero {
+    height: 100vh;
+    background: url(../../media/assets/Desktop\ -\ 3.png);
+    background-position: center -145px;
+    background-size: cover;
+    background-clip: border-box;
+    background-attachment:local;
+}

@@ -1,0 +1,36 @@
+.footer {
+    border-top: 2px solid #dad9d9;
+    padding: 2rem 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.links {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.col a {
+    color: #552940;
+    text-decoration: none;
+    margin: 2px 0;
+}
+
+.title {
+    font-weight: bold;
+    color: #cba3af;
+    text-transform: capitalize;
+    margin-left: -8px;
+}

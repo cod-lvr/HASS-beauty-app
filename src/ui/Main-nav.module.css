@@ -1,0 +1,32 @@
+.navBar {
+    padding: 1rem 3rem;
+    background-color: #63334b;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 8%;
+}
+
+.navLinks {
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.link:hover{
+    color: rgba(255, 255, 255, 0.753);
+    text-decoration: underline;
+}
+.active {
+    font-weight: 600;
+    color: #cba3af;
+}

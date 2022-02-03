@@ -1,0 +1,31 @@
+.products {
+    width: 80%;
+    margin: 2rem auto;
+    height: calc(100vh*2);
+    background: url(../../media/assets/transp.png);
+    background-position: center;
+    background-size: contain;
+    background-clip: content-box;
+    background-origin: border-box;
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
+
+.title {
+    text-align: center;
+    padding: 3rem;
+    color: #fff;
+}
+
+.title h2 {
+    text-transform:capitalize;
+    font-weight: bold;
+    margin-top: .7rem;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+}
+
+.productList {
+    list-style: none;
+    padding: 4rem;
+}

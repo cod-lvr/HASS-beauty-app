@@ -1,0 +1,14 @@
+.brands {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.content h2 {
+    font-weight: bold;
+    color: #cba3af;
+}
+
+.photo {
+    width: 90%;
+    margin: auto;
+}
