@@ -1,0 +1,63 @@
+.conatiner {
+    padding: 2rem 4rem;
+    height: 100vh;
+    margin: 1rem
+}
+
+.message {
+    text-align: center;
+    padding: 0 1rem;
+    width: 55%;
+    margin: auto;
+    color: #cba3af;
+    text-transform: capitalize;
+}
+
+.message p {
+    color: #63334b;
+}
+
+.col {
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    width: 40%;
+}
+
+.right {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 50%;
+    max-height: 490px;
+}
+
+.content {
+    padding: 2rem 1rem;
+}
+
+.content span {
+    padding: .6rem;
+    text-align: center;
+    display: block;
+    width: 10%;
+    background-color: #cba3af;
+    border-radius: 42%;
+    font-weight: bold;
+}
+
+.itemTitle {
+    margin: .5rem 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+
+.itemDes {
+    margin: .5rem 1rem; 
+    color: #eae9e9;
+}
