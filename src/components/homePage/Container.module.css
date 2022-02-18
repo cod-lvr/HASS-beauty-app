@@ -1,7 +1,7 @@
 .conatiner {
     padding: 2rem 4rem;
     height: 100vh;
-    margin: 1rem
+    margin: 2rem 1rem;
 }
 
 .message {
@@ -51,13 +51,13 @@
 }
 
 .itemTitle {
-    margin: .5rem 1rem;
+    margin: 1.5rem 1rem;
     font-size: 1.1rem;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
-
 .itemDes {
-    margin: .5rem 1rem; 
-    color: #eae9e9;
+    margin: 0 1rem; 
+    color: #cba3af;
 }

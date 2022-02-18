@@ -1,0 +1,41 @@
+.featured {
+    width: 75%;
+    margin: 4rem auto;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.left {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 45%;
+}
+
+.left .title {
+    color: #cba3af;
+}
+
+.left  a {
+    text-decoration: none;
+    color: #63334b;
+}
+
+.left  a:hover {
+    text-decoration: underline;
+}
+
+.right {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 1rem;
+    width: 50%;
+}
+
+.card {
+    padding: 2rem;
+    background-color: #cba3af;
+    color: #fff;
+}

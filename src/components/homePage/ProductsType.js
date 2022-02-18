@@ -17,7 +17,7 @@ function  ProductType(){
           <h2>Diffrent Product Types</h2>
         </div>
         <ul className={classes.productList}>
-          <Carousel autoPlay='true' infiniteLoop='true' showStatus={false} showThumbs={false}>
+          <Carousel autoPlay='true' infiniteLoop='true' showStatus={false} showThumbs={false} showIndicators={false}>
             <Frame products={frameOne} />
             <Frame products={frameTwo} />
             <Frame products={frameThree} />

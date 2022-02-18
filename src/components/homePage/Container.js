@@ -14,16 +14,26 @@ function Container() {
           </div>
           <div className={classes.right}>
             <div className={classes.content}>
-              <span>logo</span>
-              <h4 className={classes.itemTitle}>title</h4>
+              <span>
+                <i class="fa-solid fa-lips"></i>
+              </span>
+              <h4 className={classes.itemTitle}>vegan</h4>
               <p className={classes.itemDes}>
-                  
+                making it look like readable English. Many desktop publishing
+                packages and web page editors now use Lorem Ipsum as their
+                default model text,
               </p>
             </div>
             <div className={classes.content}>
-              <span>logo</span>
-              <h4 className={classes.itemTitle}>title</h4>
-              <p className={classes.itemDes}>lorem10</p>
+              <span>
+                <i class="fa-solid fa-leaf"></i>
+              </span>
+              <h4 className={classes.itemTitle}>nature ingrediants</h4>
+              <p className={classes.itemDes}>
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text. It has roots in a piece of classical Latin literature from
+                45 BC, making it over 2000 years old.
+              </p>
             </div>
           </div>
         </div>

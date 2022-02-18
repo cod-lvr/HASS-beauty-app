@@ -1,6 +1,6 @@
 .product {
     padding: 2rem;
-    margin: 0 0;
+    margin: 2rem 0;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -11,6 +11,7 @@
     justify-content: space-around;
     flex-direction: column;
     width: 50%;
+    text-align: start;
 }
 
 .itemNum {
