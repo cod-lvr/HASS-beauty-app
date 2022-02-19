@@ -1,43 +1,44 @@
 .conatiner {
-    padding: 2rem 4rem;
-    height: 100vh;
-    margin: 2rem 1rem;
+    padding: 1rem 2.5rem;
+    height: fit-content;
+    margin: 2rem 0;
 }
-
-.message {
-    text-align: center;
-    padding: 0 1rem;
-    width: 55%;
-    margin: auto;
-    color: #cba3af;
-    text-transform: capitalize;
-}
-
 .message p {
     color: #63334b;
 }
 
+.message {
+    text-align: center;
+    padding: 0;
+    width: 55%;
+    margin: auto;
+    color: #cba3af;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+
 .col {
-    margin: 2rem;
+    margin: 2rem 0;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
 .left {
-    width: 40%;
+    width: 90%;
 }
 
 .right {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     max-height: 490px;
 }
 
 .content {
-    padding: 2rem 1rem;
+    padding: 2rem;
 }
 
 .content span {
@@ -60,4 +61,33 @@
 .itemDes {
     margin: 0 1rem; 
     color: #cba3af;
+}
+
+@media (min-width: 768px) {
+    .message {
+        font-size: 1.4rem;
+        width: 55%;
+    }
+    .col {
+        margin: 2rem 6rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .left {
+        width: 50%;
+    }
+
+    .right {
+        width: 60%;
+        align-items: flex-start;
+    }
+    
+    .content {
+        font-size: 18px;
+    }
+
+    .itemTitle {
+        font-size: 1.5rem;
+    }
 }

@@ -1,16 +1,14 @@
 .product {
-    padding: 2rem;
-    margin: 2rem 0;
+    padding: 1rem;
+    margin: 2.5rem 0;
     color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
 }
+
 .contentbox {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     text-align: start;
 }
 
@@ -30,16 +28,13 @@
     font-weight: bold;
 }
 
-.itemDes {
-    margin: .5rem;
-    color: #eae9e9;
-}
-
 .btn {
-    margin: 1rem 0;
+    margin: 1rem auto;
     background: transparent;
     border: 0;
     width: 40%;
+    text-align: center;
+    color: #63334b;
 }
 
 .btn a {
@@ -52,3 +47,29 @@
 .btn a:hover {
     text-decoration: underline;
 }
+
+
+
+@media (min-width: 768px) {
+    .product {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .contentbox {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 50%;
+        text-align: start;
+    }
+    .btn {
+        margin: 1rem 0;
+        background: transparent;
+        border: 0;
+        width: 40%;
+        text-align: left;
+    }
+}
+

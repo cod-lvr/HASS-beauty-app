@@ -1,14 +1,15 @@
 .brands {
     margin: 3rem 0;
     text-align: center;
+    height: fit-content;
 }
 
 .content h2 {
     font-weight: bold;
     color: #cba3af;
 }
-
+ 
 .photo {
-    width: 80%;
+    width: 72%;
     margin: auto;
 }

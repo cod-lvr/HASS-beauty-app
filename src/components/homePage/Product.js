@@ -4,6 +4,9 @@ import classes from './Product.module.css';
 function Product(props) {
     return (
       <li className={classes.product}>
+        <div className={classes.photo}>
+          <img src={props.photo} alt={props.name} />
+        </div>
         <div className={classes.contentbox}>
           <span className={classes.itemNum}>{props.number}</span>
           <h4 className={classes.itemTitle}>{props.name}</h4>
@@ -13,9 +16,6 @@ function Product(props) {
               check this type
             </Link>
           </button>
-        </div>
-        <div className={classes.photo}>
-          <img src={props.photo} alt={props.name} />
         </div>
       </li>
     );

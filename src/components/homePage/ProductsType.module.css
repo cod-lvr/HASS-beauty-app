@@ -1,14 +1,10 @@
 .products {
-    width: 80%;
-    margin: 2rem auto;
-    height: calc(100vh*2);
-    background: url(../../media/assets/transp.png);
-    background-position: center;
-    background-size: contain;
-    background-clip: content-box;
-    background-origin: border-box;
-    background-position-x: center;
+    height: fit-content;
+    margin: 0 auto;
+    width: 98%;
+    background: url(../../media/mobile/transp.png);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .title {
@@ -28,5 +24,21 @@
 
 .productList {
     list-style: none;
-    padding: 4rem;
+    padding: 2rem;
+} 
+
+@media (min-width: 768px) {
+    .products {
+        background: url(../../media/assets/transp.png);
+        background-position: center;
+        width: 100%;
+        background-size: 75% 100%;
+        background-repeat: no-repeat;
+    }
+    .productList {
+        list-style: none;
+        padding: 2rem 0;
+        width: 70%;
+        margin: auto;
+    } 
 }

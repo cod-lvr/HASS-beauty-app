@@ -1,8 +1,38 @@
 .hero {
     height: 100vh;
-    background: url(../../media/assets/Desktop\ -\ 3.png);
-    background-position: center -145px;
-    background-size: cover;
+    background: url(../../media/mobile/bg.png);
+    background-position: bottom;
+    background-size: 100%;
     background-clip: border-box;
-    background-attachment:local;
+    background-attachment: local;
+    background-repeat: no-repeat;
+    position: relative;
 }
+
+.content {
+    position: absolute;
+    bottom: 15%;
+    left: 8%;
+    width: 60%;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 22px;
+}
+
+.content .marker {
+    color: #c1999d;
+}
+
+
+@media (min-width: 768px) {
+    .hero {
+        /* background: url(../../media/assets/Desktop\ -\ 3.png); */
+        background-position: center -145px;
+    }
+    
+    .content {
+        left: 9%;
+        text-transform: capitalize;
+        width: 40%;
+    }
+ }  

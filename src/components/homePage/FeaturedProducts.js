@@ -8,9 +8,6 @@ function FeaturedProducts() {
           <div className={classes.title}>
             <h2>Featured Products</h2>
           </div>
-          <div className={classes.link}>
-            <Link to="./shop">shop all products</Link>
-          </div>
         </div>
         <div className={classes.right}>
           <div className={classes.card}>
@@ -34,6 +31,9 @@ function FeaturedProducts() {
             <p>price</p>
           </div>
         </div>
+        <div className={classes.link}>
+            <Link to="./shop">shop all products</Link>
+          </div>
       </section>
     );
 }
