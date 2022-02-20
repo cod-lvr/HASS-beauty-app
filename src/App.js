@@ -6,7 +6,7 @@ import About from './pages/About';
 import Shop from './pages/Shop';
 import ItemPreview from './pages/Item-preview';
 
-function App() {
+const App = () => {
   return (
     <Switch>
       <Route path='/' exact>

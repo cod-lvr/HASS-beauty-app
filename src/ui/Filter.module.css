@@ -1,0 +1,43 @@
+.filter {
+    padding: 2rem 1rem;
+    background: #cba3af;
+    margin: 1rem 0;
+}
+
+.title {
+    display: block;
+    margin: 1rem 0;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+}
+
+.formControl {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: .5rem 0;
+}
+
+.formControl label {
+    display: block;
+    margin: 1rem;
+    color: #fff;
+}
+
+.formControl select {
+    padding: 0.8rem;
+    outline:  none;
+}
+
+.formControl .formBtn {
+    padding: 0.7rem;
+    width: 50%;
+    margin: auto;
+}
