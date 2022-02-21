@@ -1,14 +1,15 @@
 .filter {
-    padding: 2rem 1rem;
+    padding: 1rem 1.5rem;
     background: #cba3af;
-    margin: 1rem 0;
+    margin: 1rem;
 }
 
 .title {
     display: block;
     margin: 1rem 0;
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+    text-transform: capitalize;
 }
 
 .form {
@@ -19,25 +20,53 @@
 }
 
 .formControl {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin: .5rem 0;
+    text-transform: capitalize;
 }
 
 .formControl label {
     display: block;
-    margin: 1rem;
+    margin: 1rem 0;
     color: #fff;
+    font-size: 1.1rem;
 }
 
 .formControl select {
-    padding: 0.8rem;
+    padding: 0.8rem 1rem;
     outline:  none;
+    border: 0;
+    font-size: 1.1rem;
+    color: rgb(61, 61, 61);
 }
 
 .formControl .formBtn {
     padding: 0.7rem;
     width: 50%;
-    margin: auto;
+    margin: 0.5rem auto;
+    border: 0;
+    color: #fff;
+    font-size: 1.1rem;
+    background-color: #63334b;
+}
+
+@media (min-width: 768px) {
+    .filter {
+        padding: 2rem;
+        margin: 1rem 8rem;
+    }
+   .form {
+       flex-direction: row;
+       justify-content: space-between;
+       align-items: flex-end;
+   }
+   .formControl {
+       margin: 0 1rem;
+   }
+   .formControl .formBtn {
+       margin: 0;
+       padding: 0.8rem 1rem;
+   }
 }

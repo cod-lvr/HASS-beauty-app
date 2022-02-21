@@ -1,0 +1,37 @@
+.productItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+.photo {
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.418);
+}
+
+.photo img {
+    width: 100%;
+}
+
+.content {
+    text-align: center;;
+    width: 90%;
+    max-width: 360px;
+    padding: 1rem 0;
+}
+
+.brand {
+    font-size: 1.2rem;
+    color: #63334b;
+}
+
+.name {
+    font-size: 1.12rem;
+    color: #cba3af;
+}
+
+.price {
+    color: #63334b;
+    font-size: 0.9rem;
+}

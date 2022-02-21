@@ -1,0 +1,17 @@
+.productList {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+@media (min-width: 768px) {
+    .productList {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin: 1rem 7rem;
+    }
+}
