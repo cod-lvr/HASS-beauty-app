@@ -27,8 +27,8 @@
 @media (min-width: 768px) {
     .hero {
         background: url(../../media/assets/bg-desk.png);
-        background-position: bottom;
-        background-size: 100%;
+        background-position: center;
+        background-size: 90%;
         background-repeat: no-repeat;
     }
     

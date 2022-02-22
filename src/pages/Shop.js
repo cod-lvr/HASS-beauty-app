@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 
 import axios from 'axios';
 
@@ -24,9 +24,6 @@ const Shop = () => {
     setProductBrand(brand);
   }
 
-  useEffect(() => {
-    sendHttpRequest();
-  }, [productTag, productType, productBrand])
 
   let params = {};
 
@@ -49,17 +46,19 @@ const Shop = () => {
     params = {};
   }
 
-  const sendHttpRequest = async () => {
-     try {
-       setIsLoading(true);
-       const response = await axios.get(
-         "http://makeup-api.herokuapp.com/api/v1/products.json",
-         {
-           params: params,
-         }
-       );
-       setIsLoading(false);
-      const transformedData = response.data.map(product => {
+  const sendHttpRequest = useCallback(async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+
+      const response = await axios.get(
+        "http://makeup-api.herokuapp.com/api/v1/products.json",
+        {
+          params: params,
+        }
+      );
+
+      const transformedData = response.data.map((product) => {
         return {
           id: product.id,
           brand: product.brand,
@@ -67,16 +66,24 @@ const Shop = () => {
           price: product.price,
           image: product.image_link,
           name: product.name,
-          colors: product.product_colors
-        }
+          colors: product.product_colors,
+        };
       });
 
       setProductList(transformedData);
-     } catch (error) {
-      setIsLoading(false);
-      setError(error);
-     }
-  }
+    } catch (error) {
+      setError(error.message);
+    }
+    setIsLoading(false);
+  }, []);
+
+  // useMemo(() => {
+  //   params
+  // }, [])
+
+   useEffect(() => {
+     sendHttpRequest();
+   }, [sendHttpRequest]);
 
 
   return (
@@ -84,7 +91,14 @@ const Shop = () => {
       <MainNav />
       <main>
         <Filter onSubmit={filterValuesHandler} />
-        <ul>{isLoading ? <p>loading..</p> : <ProductsList products={productsList} />}</ul>
+        {!isLoading && productsList.length > 0 && (
+          <ProductsList products={productsList} />
+        )}
+        {!isLoading && productsList.length === 0 && (
+          <p>no products to display.</p>
+        )}
+        {!isLoading && error && <p>{error}</p>}
+        {isLoading && <p>loading products</p>}
       </main>
       <Footer />
     </React.Fragment>
