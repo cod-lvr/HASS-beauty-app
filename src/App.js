@@ -1,10 +1,10 @@
-import './App.css';
 import {Route, Switch} from 'react-router-dom';
+import './App.css';
 
 import Home from './pages/Home';
 import About from './pages/About';
 import Shop from './pages/Shop';
-import ItemPreview from './pages/Item-preview';
+import ItemPreview from './ui/Item-preview';
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
       <Route path='/shop' exact>
         <Shop />
       </Route>
-      <Route path='/item-preview/:product-name' exact>
+      <Route path='/product-details/:productId'>
         <ItemPreview />
       </Route>
     </Switch>

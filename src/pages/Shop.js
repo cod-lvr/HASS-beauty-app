@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback} from 'react';
 
 import axios from 'axios';
 
@@ -75,11 +75,8 @@ const Shop = () => {
       setError(error.message);
     }
     setIsLoading(false);
-  }, []);
+  }, [params]);
 
-  // useMemo(() => {
-  //   params
-  // }, [])
 
    useEffect(() => {
      sendHttpRequest();

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import classes from './Filter.module.css';
 
@@ -83,4 +83,4 @@ const Filter = (props) => {
     );
 }
 
-export default Filter;
+export default React.memo(Filter);
