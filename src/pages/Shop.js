@@ -1,36 +1,28 @@
-import React, { useState, useEffect, useCallback} from 'react';
+import React, { useState } from "react";
 
-import axios from 'axios';
-
-import MainNav from '../ui/Main-nav';
-import Filter from '../ui/Filter';
+import MainNav from "../ui/Main-nav";
+import Filter from "../ui/Filter";
 import ProductsList from "../components/shop/ProductsList.js";
-import Footer from '../ui/Footer';
-
+import Footer from "../ui/Footer";
+import useRequest from "../components/hooks/useReqest";
 
 const Shop = () => {
-   const [productTag, setProductTag] = useState();
-   const [productType, setProductType] = useState();
-   const [productBrand, setProductBrand] = useState();
-
-  const [isLoading, setIsLoading] =  useState(false);
-  const [error, setError] = useState(null);
-
-  const [productsList, setProductList] = useState([]);
+  const [productTag, setProductTag] = useState();
+  const [productType, setProductType] = useState();
+  const [productBrand, setProductBrand] = useState();
 
   const filterValuesHandler = (tag, type, brand) => {
     setProductTag(tag);
     setProductType(type);
     setProductBrand(brand);
-  }
-
+  };
 
   let params = {};
 
   if (productTag) {
     params = {
-      product_tags:productTag,
-      ...params
+      product_tags: productTag,
+      ...params,
     };
   } else if (productType) {
     params = {
@@ -46,60 +38,33 @@ const Shop = () => {
     params = {};
   }
 
-  const sendHttpRequest = useCallback(async () => {
-    try {
-      setIsLoading(true);
-      setError(null);
+  const [error, isLoading, productsList] = useRequest(
+    "http://makeup-api.herokuapp.com/api/v1/products.json",
+    params
+  );
 
-      const response = await axios.get(
-        "http://makeup-api.herokuapp.com/api/v1/products.json",
-        {
-          params: params,
-        }
-      );
+  let content = <p>loading..</p>;
 
-      const transformedData = response.data.map((product) => {
-        return {
-          id: product.id,
-          brand: product.brand,
-          description: product.description,
-          price: product.price,
-          image: product.image_link,
-          name: product.name,
-          colors: product.product_colors,
-        };
-      });
+  if (!isLoading && productsList.length > 0) {
+    content = <ProductsList products={productsList} />;
+  }
 
-      setProductList(transformedData);
-    } catch (error) {
-      setError(error.message);
-    }
-    setIsLoading(false);
-  }, [params]);
+  if (!isLoading && productsList.length === 0) {
+    content = <p>no products to display.</p>;
+  }
 
-
-   useEffect(() => {
-     sendHttpRequest();
-   }, [sendHttpRequest]);
-
+  if (!isLoading && error) {
+    content = <p>{error}</p>;
+  }
 
   return (
     <React.Fragment>
       <MainNav />
-      <main>
-        <Filter onSubmit={filterValuesHandler} />
-        {!isLoading && productsList.length > 0 && (
-          <ProductsList products={productsList} />
-        )}
-        {!isLoading && productsList.length === 0 && (
-          <p>no products to display.</p>
-        )}
-        {!isLoading && error && <p>{error}</p>}
-        {isLoading && <p>loading products</p>}
-      </main>
+      <Filter onSubmit={filterValuesHandler} />
+      {content}
       <Footer />
     </React.Fragment>
   );
-}
+};
 
 export default Shop;

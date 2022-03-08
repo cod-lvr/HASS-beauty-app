@@ -1,35 +1,46 @@
-import React from "react";
-
-import classes from 'Item-preview.module.css';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import Footer from "./Footer";
 import MainNav from "./Main-nav";
+import ProductDetails from "./productDetails";
+import useRequest from "../components/hooks/useReqest";
+
+const  ItemPreview = ()  => {
+  const [itemData, setItemData] = useState([]);
+  const params = useParams();
+
+  const [error, isLoading, productsList] = useRequest(
+    "http://makeup-api.herokuapp.com/api/v1/products.json",
+    params
+  );
+
+  const findItemFromData = () => {
+    const selectedItem = productsList.find(
+      (item) => item.id === +params.productId
+    );
+    setItemData(selectedItem);
+  };
+
+    useEffect(() => {
+      findItemFromData();
+    }, []);
 
 
-function ItemPreview(props) {
+  let content = <p>laoding..</p>;
+
+  if (!isLoading) {
+    content = <ProductDetails itemDetails={itemData} />;
+  }
+
+  if (error) {
+    content = <p>can not display item.</p>
+  }
+
   return (
     <React.Fragment>
       <MainNav />
-      <section className={classes.item}>
-        <div className={classes.left}>
-          <div className={classes.image}>
-            <img src={props.img} alt={props.name} />
-          </div>
-          <div className={classes.colors}></div>
-        </div>
-        <div className={classes.right}>
-          <div className={classes.content}>
-            <h2 className={classes.brand}>{props.brand}</h2>
-            <h1 className={classes.name}>{props.name}</h1>
-            <p className={classes.description}>{props.description}</p>
-          </div>
-          <div className={classes.actions}>
-            <button>-</button>
-            <button>{props.number}</button>
-            <button>+</button>
-          </div>
-        </div>
-      </section>
+      {content}
       <Footer />
     </React.Fragment>
   );
